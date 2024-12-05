@@ -6,6 +6,7 @@ import (
 	"text/template"
 )
 
+
 func Homehandler(w http.ResponseWriter, r *http.Request) {
 	tmplDir := filepath.Join("views/templates", "index.html")
 
