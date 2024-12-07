@@ -1,6 +1,10 @@
 package models
 
-import "sync"
+import (
+	"io"
+	"net/http"
+	"sync"
+)
 
 type Config struct {
 	Apis *Apis
@@ -21,4 +25,18 @@ func AppConfig() *Config {
 		}
 	})
 	return instance
+}
+
+func (c *Config) FetchData(apiType string) ([]byte, error) {
+	res, err := http.Get(apiType)
+	if err != nil {
+		return nil, err
+	}
+	defer res.Body.Close()
+
+	body, err := io.ReadAll(res.Body)
+	if err != nil {
+		return nil, err
+	}
+	return body, nil
 }

@@ -15,3 +15,14 @@ func NewApis() *Apis {
 		Relation:  "https://groupietrackers.herokuapp.com/api/relation",
 	}
 }
+
+type Artist struct {
+	ConcertDates string   `json:"concertDates"`
+	CreationDate int      `json:"creationDate"`
+	FirstAlbum   string   `json:"firstAlbum"`
+	Id           int      `json:"id"`
+	Image        string   `json:"image"`
+	Locations    string   `json:"locations"`
+	Members      []string `json:"members"`
+	Relations    string   `json:"relations"`
+}
