@@ -1,19 +1,18 @@
 package models
 
 type Apis struct {
-	Artist    string
-	Locations string
-	Date      string
-	Relation  string
+	ApisUrls map[string]string
 }
 
-func NewApis() *Apis {
-	return &Apis{
-		Artist:    "https://groupietrackers.herokuapp.com/api/artists",
-		Locations: "https://groupietrackers.herokuapp.com/api/locations",
-		Date:      "https://groupietrackers.herokuapp.com/api/dates",
-		Relation:  "https://groupietrackers.herokuapp.com/api/relation",
-	}
+func ConfigApis() *Apis {
+	var urls = make(map[string]string)
+
+	urls["artists"] = "https://groupietrackers.herokuapp.com/api/artists"
+	urls["locations"] = "https://groupietrackers.herokuapp.com/api/locations"
+	urls["dates"] = "https://groupietrackers.herokuapp.com/api/dates"
+	urls["relations"] = "https://groupietrackers.herokuapp.com/api/relation"
+
+	return &Apis{urls}
 }
 
 type Artist struct {
