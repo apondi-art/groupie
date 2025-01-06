@@ -3,8 +3,8 @@ package models
 type Apis struct {
 	ApisUrls map[string]string
 }
-
-func ConfigApis() *Apis {
+//initializes all the urls 
+func NewApis() *Apis {
 	var urls = make(map[string]string)
 
 	urls["artists"] = "https://groupietrackers.herokuapp.com/api/artists"
