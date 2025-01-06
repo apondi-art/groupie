@@ -11,7 +11,7 @@ import (
 
 // Config is a structure that holds configuration settings
 // Apis is a pointer to an Apis structure (defined elsewhere)
-//initializes all the information needed for a
+//initializes all the information needed for a program to run
 type Config struct {
 	Apis *Apis
 }
@@ -83,6 +83,7 @@ func (c *Config) FetchData(apiType string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
+	
 
 	return body, nil
 }
