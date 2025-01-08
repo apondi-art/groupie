@@ -3,6 +3,19 @@ package models
 type Apis struct {
 	ApisUrls map[string]string
 }
+
+
+type Artist struct {
+	ConcertDates string   `json:"concertDates"`
+	CreationDate int      `json:"creationDate"`
+	FirstAlbum   string   `json:"firstAlbum"`
+	Id           int      `json:"id"`
+	Image        string   `json:"image"`
+	Locations    string   `json:"locations"`
+	Members      []string `json:"members"`
+	Relations    string   `json:"relations"`
+}
+
 //initializes all the urls 
 func NewApis() *Apis {
 	var urls = make(map[string]string)
@@ -15,13 +28,4 @@ func NewApis() *Apis {
 	return &Apis{urls}
 }
 
-type Artist struct {
-	ConcertDates string   `json:"concertDates"`
-	CreationDate int      `json:"creationDate"`
-	FirstAlbum   string   `json:"firstAlbum"`
-	Id           int      `json:"id"`
-	Image        string   `json:"image"`
-	Locations    string   `json:"locations"`
-	Members      []string `json:"members"`
-	Relations    string   `json:"relations"`
-}
+

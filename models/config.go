@@ -17,6 +17,17 @@ type Config struct {
 }
 
 // Declare global variables for singleton pattern
+/*singleton is design pattern 
+ Characteristic of a singleton
+  1. single instance
+    - it restricts the instantiation (initiating ... / starting) of a class(package) to a single object
+  2. Global access
+    - The single instance  is globally accessible  or should be globally accesible
+ 3.  Controlled access
+   - The class/package controls how and when the instance is created 
+  
+ */
+
 var (
 	// instance will hold the single instance of Config
 	instance *Config
@@ -50,7 +61,8 @@ func (c *Config) CreateInitialData() {
 
 	// Declare slice to hold the parsed JSON data
 	// Note: There's a syntax error in string declaration (*string*)
-	var data []map[string]interface{}
+	// var data []map[string]interface{}
+	var data []Artist
 
 	// Convert JSON data into Go data structure
 	err = json.Unmarshal(body, &data)
@@ -64,11 +76,13 @@ func (c *Config) CreateInitialData() {
 	// if len(data) > 0 {
 	// 	fmt.Printf("\n\nThe format of our data\n%v\n\n", data[0])
 	// }
-fmt.Printf("%+v",data[0]["members"])
+fmt.Printf("%+v",data[0])
 }
 
 // FetchData makes an HTTP GET request to fetch data from an API
 // Note: There are syntax errors in the parameter types (*apiType* *string*)
+/*
+*/
 func (c *Config) FetchData(apiType string) ([]byte, error) {
 	// Make HTTP GET request using URL from Apis configuration
 	res, err := http.Get(c.Apis.ApisUrls[apiType])
