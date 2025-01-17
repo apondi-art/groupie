@@ -72,11 +72,11 @@ func (c *Config) CreateInitialData() {
 		return
 	}
 
-	// If data exists, print the first item to show its format
-	// if len(data) > 0 {
-	// 	fmt.Printf("\n\nThe format of our data\n%v\n\n", data[0])
-	// }
-fmt.Printf("%+v",data[0])
+// 	// If data exists, print the first item to show its format
+// 	// if len(data) > 0 {
+// 	// 	fmt.Printf("\n\nThe format of our data\n%v\n\n", data[0])
+// 	// }
+// fmt.Printf("%+v",data[0])
 }
 
 // FetchData makes an HTTP GET request to fetch data from an API

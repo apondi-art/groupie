@@ -3,13 +3,12 @@ package main
 import (
 	"fmt"
 	"groupie/handlers"
-	"groupie/models"
 	"log"
 	"net/http"
 )
 
 func main() {
-	models.NewConfig()
+	// models.NewConfig()
 
 	fs := http.FileServer(http.Dir("views/static"))
 	http.Handle("/static/", http.StripPrefix("/static", fs))

@@ -9,24 +9,21 @@
 </head>
 
 <body>
-    <form action="">
-        <label id="label"></label>
-        <input type="text" placeholder="Enter Artist Name">
-        <input type="submit" id="submitid" value="submit">
-    </form>
+    <h1>Artists</h1>
+    {{if .Artists}}
+    <ul class="artist-container">
+        {{range .Artists}}
+        <li class="artist-card">
+            <img src="{{.Image}}" alt="" width="100" height="100">
 
-    <script>
-        label = document.getElementById("label")
-        label.innerHTML = " Kindly Search Membres"
-        function myFunction() {
-            alert("Hello World!");
-        }
-        document.getElementById("submitid").addEventListener("click", myFunction)
-       
-
-
-
-    </script>
+            <h2>{{.Members}}</h2>
+            </li>
+            {{end}}
+            </ul>
+            {{else}}
+            <p>Loading artists</p>
+            {{end}}
+            <script src="main.js"></script>
 </body>
 
 </html>
